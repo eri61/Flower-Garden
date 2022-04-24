@@ -19,7 +19,7 @@ def outer(x):
     return 3
 
 
-def outer(some_func):
+def outer_func(some_func):
     # functionも変数の様に扱える
     def inner():
         print("before some_func")

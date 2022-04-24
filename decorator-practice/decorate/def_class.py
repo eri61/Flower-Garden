@@ -27,9 +27,9 @@ class testClass:
     def __getitem__(self, key):
         # t = testClass(<>)
         # t['...']の様に扱うときに呼び出されるメソッド
-        if not key in self.items.keys():
+        if not (key in self.items.keys()):
             raise Exception("key error")
-        elif not 'my_name' in self.items.keys():
+        elif not ('my_name' in self.items.keys()):
             print('お前は誰だ')
         return self.items.get(key)
 
