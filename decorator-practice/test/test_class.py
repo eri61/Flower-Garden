@@ -1,7 +1,9 @@
 import sys
 
+# コメントの後に# noqa（または# nopepだが、環境による）をつけると自動成型を無視する
 sys.path.append('..')
-from decorate.def_class import testClass
+from decorate.def_class import testClass  # noqa
+from decorate.practice_property import PropertyClass  # noqa
 
 
 def test_add_func():
@@ -40,4 +42,13 @@ def test_iter():
     i = list(x)
     return i
 
-test_add_func()
+
+def test_property():
+    prop = PropertyClass("it is instance")
+    print(prop.message)
+    print("change property->")
+    prop.message = "make a new instance"
+    print(prop.message)
+
+
+test_property()
