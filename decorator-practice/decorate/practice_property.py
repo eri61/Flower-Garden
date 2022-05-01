@@ -27,13 +27,11 @@ class PropertyClass:
         print("call __str__ module")
         return self.message
 
+    @property
+    def message(self):
+        return self.__message
 
-@property
-def message(self):
-    return self.__message
-
-
-@message.setter
-def message(self, value):
-    if value != "":
-        self.__message = value
+    @message.setter
+    def message(self, value):
+        if value != "":
+            self.__message = value
