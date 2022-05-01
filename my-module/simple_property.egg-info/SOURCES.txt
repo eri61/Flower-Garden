@@ -1,0 +1,7 @@
+setup.py
+simple_property/__init__.py
+simple_property/class_property.py
+simple_property.egg-info/PKG-INFO
+simple_property.egg-info/SOURCES.txt
+simple_property.egg-info/dependency_links.txt
+simple_property.egg-info/top_level.txt
