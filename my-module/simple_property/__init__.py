@@ -1,3 +1,3 @@
-from .class_property import self_variable
+from .class_property import define_property
 
 __version__ = '0.1.0'
