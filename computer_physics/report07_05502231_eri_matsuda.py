@@ -1,29 +1,26 @@
+import sys
+from functools import lru_cache
+
 import matplotlib.pyplot as plt
 import numpy as np
 
+sys.setrecursionlimit(15000)
 
-def fibo(n):
-    if n == 0:
-        f_p = 0
-    elif n == 1:
-        f_p = 1
+
+@lru_cache(128)
+def fibo(n: int) -> int:
+    if n > 1:
+        f_p = fibo(n-1) + fibo(n-2)
     else:
-        f_p_2 = 0
-        f_p_1 = 1
-        for p in range(2, n+1):
-            f_p = f_p_1 + f_p_2
-
-            f_p_2 = f_p_1
-            f_p_1 = f_p
-
+        f_p = n
     return f_p
 
 
-x = np.arange(1, 101)
-y_n = np.zeros_like(x).astype(np.float32)
-for i in x:
-    print(fibo(i+1) / fibo(i))
-    y_n[i - 1] = fibo(i+1) / fibo(i)
-print(y_n)
-plt.plot(x, y_n)
+np.random.seed(seed=0)
+y = np.random.rand(100)
+x = range(1, 101)           # numpyを使用するとfor分でoverflowが起こるため注意
+
+for i, val in enumerate(x):
+    y[i] = fibo(val+1) / fibo(val)
+plt.plot(x, y)
 plt.show()
