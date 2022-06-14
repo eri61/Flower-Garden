@@ -24,4 +24,11 @@
             "source.organizeImports": true
         },                                      // 入力後に自動整形を行わない
     },
+    "python.autoComplete.extraPaths":[
+        "/home/eri61/.local/python3.9/site-packages/", 
+        "/home/eri61/.venv/lib/python3.9/site-packages/"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/eri61/.venv/lib/python3.9/site-packages/"
+    ]
 }
