@@ -9,4 +9,5 @@ def circle_trajectory(x):
 
 integ, err = integrate.quad(circle_trajectory, 0, 1)
 area = 4 * integ
-print(f"pi; {round(area, 5)}")
+print(f"pi= {area}")
+print(f"error= {err}")
