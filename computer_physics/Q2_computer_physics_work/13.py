@@ -1,6 +1,5 @@
-from sympy import Symbol, factor
+from sympy import Symbol, pprint, solve
 
 x = Symbol('x')
-y = Symbol('y')
-f = x*x - y*y
-factor(f)
+f = x**3 -  1
+pprint(solve(f, x))

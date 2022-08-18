@@ -26,9 +26,11 @@
     },
     "python.autoComplete.extraPaths":[
         "/home/eri61/.local/python3.9/site-packages/", 
-        "/home/eri61/.venv/lib/python3.9/site-packages/"
+        "/home/eri61/.venv/lib/python3.9/site-packages/",
+        "/home/eri61/.ve3.10/lib/python3.10/site-packages/"
     ],
     "python.analysis.extraPaths": [
-        "/home/eri61/.venv/lib/python3.9/site-packages/"
+        "/home/eri61/.venv/lib/python3.9/site-packages/",
+        "/home/eri61/.ve3.10/lib/python3.10/site-packages/"
     ]
 }
