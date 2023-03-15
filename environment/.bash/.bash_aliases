@@ -1,6 +1,7 @@
 # set alias
 alias rm=trash
 alias pbcopy='clip.exe'     # wslのコピー用のコマンド
+alias vi='vim'
 alias pip='python3 -m pip'
 alias python='python3'
 alias ipy='ipython'
