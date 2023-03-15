@@ -1,0 +1,6 @@
+#!/bin/bash
+
+CURD=$(pwd)
+ln -is ${CURD}/.bash_private ~/.bash_private
+ln -is ${CURD}/.bash_aliases ~/.bash_aliases
+ln -is ${CURD}/.vimrc ~/.vimrc

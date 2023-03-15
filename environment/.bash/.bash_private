@@ -1,0 +1,16 @@
+# .bashrc
+
+# set prompt
+PS1='\[\e[1;32m\][\u@\h] \w\$ $(__git_ps1 "\[\e[1;34m\](%s)\[\e[m\]") \[\e[m\] \n'
+# PATH=$PATH:/usr/local/cuda/bin
+
+# environment 
+
+# command
+. ~/.bash/.git-prompt.sh
+
+# set alias
+source ~/.ve3.10/bin/activate
+if [ -f ~/.bash_aliases ]; then                                                                                                                                                    
+. ~/.bash_aliases                                                                                                                                                          
+fi

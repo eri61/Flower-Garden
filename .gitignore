@@ -1,2 +1,5 @@
 *__pycache__*
 *.dat
+frPJ*
+*/build*
+*.egg-info
