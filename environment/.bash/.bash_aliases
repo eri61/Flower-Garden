@@ -5,7 +5,7 @@ alias pip='python3 -m pip'
 alias python='python3'
 alias ipy='ipython'
 
-# about ls command
+# about list command
 alias la='ls -a'
 alias ll='ls -l'
 alias tree='tree -C'
