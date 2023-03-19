@@ -25,3 +25,7 @@ fi
 ```
 source ~/.bashrc
 ```
+
+※参考
+- [BashのプロンプトにGitのブランチを含める](https://qiita.com/jun68ykt/items/d95010ad7dae2f802474)
+- [git/git-prompt.sh at master git・git](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh)
