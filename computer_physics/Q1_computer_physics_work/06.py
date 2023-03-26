@@ -1,3 +1,4 @@
+# for文で代用できるときはfor文推奨です。
 def prime(num):
     cnt = 0
     for i in range(2, num):

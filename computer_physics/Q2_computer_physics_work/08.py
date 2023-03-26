@@ -2,35 +2,31 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-def trajectory_graph_settings(func):
-    # func -> x, y のndarrayが帰ってくる関数
-    def wrapper(*args, **kargs) -> None:
-        x, y = func(*args, **kargs)
-        max_index = y.argmax()
-        x_max, y_max = x[max_index], y[max_index]
-        print(f"maximum height; {y_max}")
-        plt.figure(figsize=(7, 4))
-        plt.xlabel("x-coordinate")
-        plt.ylabel("y-coordinate")
-        plt.title("Trajectory of a ball")
-        plt.plot(x, y, color='c', zorder=1, label='trajectory')
-        plt.scatter(x_max, y_max, marker='o',
-                    s=30, c='m', zorder=2, label='maximum height')
-        plt.legend()
-        plt.show()
-    return wrapper
+def draw_trajectory(v0: float, theta: float) -> None:
+    g: float = 9.8
+    t_flight = 2 * v0*np.sin(theta) / g
 
-
-@trajectory_graph_settings
-def draw_trajectory(
-    v0, theta, g=9.8
-) -> np.ndarray:
-
-    t_flight = 2 * v0 * np.sin(theta) / g
-    t = np.arange(0, t_flight, 0.001)
+    # 配列計算→numpy推奨です
+    t = np.linspace(0., t_flight, 1000)
     x = v0 * np.cos(theta) * t
-    y = v0 * np.sin(theta) * t - g * t**2 / 2
-    return x, y
+    y = v0 * np.sin(theta) * t - g * t ** 2 / 2
+    draw_graph(x, y)
+
+
+def get_max_height(x: np.ndarray, y: np.ndarray):
+    # 最高到達点の座標(x,y)を返す
+    return x[y.argmax()], y.max()
+
+
+def draw_graph(x: np.ndarray, y: np.ndarray):
+    max_height = get_max_height(x, y)   # return (x, y)
+    print(max_height)
+    plt.plot(x, y)
+    plt.xlabel("x-coordinate")
+    plt.ylabel("y-coordinate")
+    plt.title("Trajectory of a ball")
+    plt.plot(max_height[0], max_height[1], 'o')
+    plt.show()
 
 
 try:
@@ -39,5 +35,5 @@ try:
 except ValueError:
     print("You enterd an invalid input")
 else:
-    theta = np.radians(theta)
+    theta = np.deg2rad(theta)
     draw_trajectory(v0, theta)
